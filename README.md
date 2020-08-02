@@ -212,6 +212,8 @@ import { Observable } from 'rxjs';
 ![FHIR_Postman_01](https://user-images.githubusercontent.com/1216181/89124911-d9304600-d4da-11ea-97e7-59a23a4ab1fd.png)
 ![FHIR_Postman_02](https://user-images.githubusercontent.com/1216181/89124918-e2211780-d4da-11ea-9841-bf96409b953f.png)
 
+## MongoDB Database
+![FHIR_Mongo](https://user-images.githubusercontent.com/1216181/89125091-41335c00-d4dc-11ea-9285-739f81dfc10c.png)
 
 ## FHIR_Diagram
 ![FHIR_Diagram](https://user-images.githubusercontent.com/1216181/89124707-55298e80-d4d9-11ea-9d59-83107cfa3185.png)
