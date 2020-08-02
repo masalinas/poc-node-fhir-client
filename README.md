@@ -9,6 +9,8 @@ yarn
 yarn start
 ```
 
+Disable CORS check from server config file on src/config.js
+
 ## Install swagger FHIR contract generator
 ```shell
 npm install -g fhir-swagger
