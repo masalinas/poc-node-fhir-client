@@ -37,12 +37,16 @@ ng new fhir-client-poc
 ```
 
 ## Program your App ...
-The code generate from swagger codegen import bad import 'rxjs'. Set in all services this new import:
+The angular services generated from swagger-codegen created bad import 'rxjs' in all services inside src/app/shared/services/backedn/api.
+Update these services with this patch:
 
 ```shell
 import { Observable } from 'rxjs';
 ```
 ## Add a patient using Postman
+
+We can insert a Patient resource from Postman App:
+
 ```javascript
 {
   "resourceType": "Patient",
