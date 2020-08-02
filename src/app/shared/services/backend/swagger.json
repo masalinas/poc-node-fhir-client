@@ -1,0 +1,3158 @@
+{
+  "swagger": "2.0",
+  "definitions": {
+    "Account": {
+      "description": "",
+      "type": "object",
+      "properties": {
+        "resourceType": {
+          "type": "string",
+          "minLength": 1
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "minLength": 1
+            },
+            "div": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "div"
+          ]
+        },
+        "identifier": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "system",
+              "value"
+            ],
+            "properties": {
+              "system": {
+                "type": "string",
+                "minLength": 1
+              },
+              "value": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "object",
+          "properties": {
+            "coding": {
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "required": [
+                  "system",
+                  "code",
+                  "display"
+                ],
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "code": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "display": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "coding",
+            "text"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "reference",
+              "display"
+            ],
+            "properties": {
+              "reference": {
+                "type": "string",
+                "minLength": 1
+              },
+              "display": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "servicePeriod": {
+          "type": "object",
+          "properties": {
+            "start": {
+              "type": "string",
+              "minLength": 1
+            },
+            "end": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "start",
+            "end"
+          ]
+        },
+        "coverage": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "priority"
+            ],
+            "properties": {
+              "coverage": {
+                "type": "object",
+                "properties": {
+                  "reference": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "reference"
+                ]
+              },
+              "priority": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "owner": {
+          "type": "object",
+          "properties": {
+            "reference": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "reference"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "meta": {
+          "type": "object",
+          "properties": {
+            "tag": {
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "required": [
+                  "system",
+                  "code",
+                  "display"
+                ],
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "code": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "display": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "tag"
+          ]
+        }
+      },
+      "required": [
+        "resourceType",
+        "id",
+        "text",
+        "identifier",
+        "status",
+        "type",
+        "name",
+        "subject",
+        "servicePeriod",
+        "coverage",
+        "owner",
+        "description",
+        "meta"
+      ]
+    },
+    "AllergyIntolerance": {
+      "description": "",
+      "type": "object",
+      "properties": {
+        "resourceType": {
+          "type": "string",
+          "minLength": 1
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "minLength": 1
+            },
+            "div": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "div"
+          ]
+        },
+        "identifier": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "system",
+              "value"
+            ],
+            "properties": {
+              "system": {
+                "type": "string",
+                "minLength": 1
+              },
+              "value": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "clinicalStatus": {
+          "type": "object",
+          "properties": {
+            "coding": {
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "required": [
+                  "system",
+                  "code",
+                  "display"
+                ],
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "code": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "display": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "coding"
+          ]
+        },
+        "verificationStatus": {
+          "type": "object",
+          "properties": {
+            "coding": {
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "required": [
+                  "system",
+                  "code",
+                  "display"
+                ],
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "code": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "display": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "coding"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "properties": {}
+          }
+        },
+        "criticality": {
+          "type": "string",
+          "minLength": 1
+        },
+        "code": {
+          "type": "object",
+          "properties": {
+            "coding": {
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "required": [
+                  "system",
+                  "code",
+                  "display"
+                ],
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "code": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "display": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "coding"
+          ]
+        },
+        "patient": {
+          "type": "object",
+          "properties": {
+            "reference": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "reference"
+          ]
+        },
+        "onsetDateTime": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recordedDate": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recorder": {
+          "type": "object",
+          "properties": {
+            "reference": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "reference"
+          ]
+        },
+        "asserter": {
+          "type": "object",
+          "properties": {
+            "reference": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "reference"
+          ]
+        },
+        "lastOccurrence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "note": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "text"
+            ],
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "reaction": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "description",
+              "onset",
+              "severity"
+            ],
+            "properties": {
+              "substance": {
+                "type": "object",
+                "properties": {
+                  "coding": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "minItems": 1,
+                    "items": {
+                      "required": [
+                        "system",
+                        "code",
+                        "display"
+                      ],
+                      "properties": {
+                        "system": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "code": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "display": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "coding"
+                ]
+              },
+              "manifestation": {
+                "type": "array",
+                "uniqueItems": true,
+                "minItems": 1,
+                "items": {
+                  "properties": {
+                    "coding": {
+                      "type": "array",
+                      "uniqueItems": true,
+                      "minItems": 1,
+                      "items": {
+                        "required": [
+                          "system",
+                          "code",
+                          "display"
+                        ],
+                        "properties": {
+                          "system": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "code": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "display": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1
+              },
+              "onset": {
+                "type": "string",
+                "minLength": 1
+              },
+              "severity": {
+                "type": "string",
+                "minLength": 1
+              },
+              "exposureRoute": {
+                "type": "object",
+                "properties": {
+                  "coding": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "minItems": 1,
+                    "items": {
+                      "required": [
+                        "system",
+                        "code",
+                        "display"
+                      ],
+                      "properties": {
+                        "system": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "code": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "display": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "coding"
+                ]
+              }
+            }
+          }
+        },
+        "meta": {
+          "type": "object",
+          "properties": {
+            "tag": {
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "required": [
+                  "system",
+                  "code",
+                  "display"
+                ],
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "code": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "display": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "tag"
+          ]
+        }
+      },
+      "required": [
+        "resourceType",
+        "id",
+        "text",
+        "identifier",
+        "clinicalStatus",
+        "verificationStatus",
+        "type",
+        "category",
+        "criticality",
+        "code",
+        "patient",
+        "onsetDateTime",
+        "recordedDate",
+        "recorder",
+        "asserter",
+        "lastOccurrence",
+        "note",
+        "reaction",
+        "meta"
+      ]
+    },
+    "Claim": {
+      "description": "",
+      "type": "object",
+      "properties": {
+        "resourceType": {
+          "type": "string",
+          "minLength": 1
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "minLength": 1
+            },
+            "div": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "div"
+          ]
+        },
+        "identifier": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "system",
+              "value"
+            ],
+            "properties": {
+              "system": {
+                "type": "string",
+                "minLength": 1
+              },
+              "value": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "object",
+          "properties": {
+            "coding": {
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "required": [
+                  "system",
+                  "code"
+                ],
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "code": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "coding"
+          ]
+        },
+        "use": {
+          "type": "string",
+          "minLength": 1
+        },
+        "patient": {
+          "type": "object",
+          "properties": {
+            "reference": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "reference"
+          ]
+        },
+        "created": {
+          "type": "string",
+          "minLength": 1
+        },
+        "insurer": {
+          "type": "object",
+          "properties": {
+            "reference": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "reference"
+          ]
+        },
+        "provider": {
+          "type": "object",
+          "properties": {
+            "reference": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "reference"
+          ]
+        },
+        "priority": {
+          "type": "object",
+          "properties": {
+            "coding": {
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "required": [
+                  "code"
+                ],
+                "properties": {
+                  "code": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "coding"
+          ]
+        },
+        "payee": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "object",
+              "properties": {
+                "coding": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "minItems": 1,
+                  "items": {
+                    "required": [
+                      "code"
+                    ],
+                    "properties": {
+                      "code": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "coding"
+              ]
+            }
+          },
+          "required": [
+            "type"
+          ]
+        },
+        "careTeam": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "sequence"
+            ],
+            "properties": {
+              "sequence": {
+                "type": "number"
+              },
+              "provider": {
+                "type": "object",
+                "properties": {
+                  "reference": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "reference"
+                ]
+              }
+            }
+          }
+        },
+        "diagnosis": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "sequence"
+            ],
+            "properties": {
+              "sequence": {
+                "type": "number"
+              },
+              "diagnosisCodeableConcept": {
+                "type": "object",
+                "properties": {
+                  "coding": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "minItems": 1,
+                    "items": {
+                      "required": [
+                        "code"
+                      ],
+                      "properties": {
+                        "code": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "coding"
+                ]
+              }
+            }
+          }
+        },
+        "insurance": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "sequence",
+              "focal"
+            ],
+            "properties": {
+              "sequence": {
+                "type": "number"
+              },
+              "focal": {
+                "type": "boolean"
+              },
+              "identifier": {
+                "type": "object",
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "system",
+                  "value"
+                ]
+              },
+              "coverage": {
+                "type": "object",
+                "properties": {
+                  "reference": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "reference"
+                ]
+              }
+            }
+          }
+        },
+        "item": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "sequence",
+              "servicedDate"
+            ],
+            "properties": {
+              "sequence": {
+                "type": "number"
+              },
+              "careTeamSequence": {
+                "type": "array",
+                "items": {
+                  "properties": {}
+                }
+              },
+              "productOrService": {
+                "type": "object",
+                "properties": {
+                  "coding": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "minItems": 1,
+                    "items": {
+                      "required": [
+                        "code"
+                      ],
+                      "properties": {
+                        "code": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "coding"
+                ]
+              },
+              "servicedDate": {
+                "type": "string",
+                "minLength": 1
+              },
+              "unitPrice": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "currency": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "value",
+                  "currency"
+                ]
+              },
+              "net": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "currency": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "value",
+                  "currency"
+                ]
+              }
+            }
+          }
+        },
+        "meta": {
+          "type": "object",
+          "properties": {
+            "tag": {
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "required": [
+                  "system",
+                  "code",
+                  "display"
+                ],
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "code": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "display": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "tag"
+          ]
+        }
+      },
+      "required": [
+        "resourceType",
+        "id",
+        "text",
+        "identifier",
+        "status",
+        "type",
+        "use",
+        "patient",
+        "created",
+        "insurer",
+        "provider",
+        "priority",
+        "payee",
+        "careTeam",
+        "diagnosis",
+        "insurance",
+        "item",
+        "meta"
+      ]
+    },
+    "Organization": {
+      "description": "",
+      "type": "object",
+      "properties": {
+        "resourceType": {
+          "type": "string",
+          "minLength": 1
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "minLength": 1
+            },
+            "div": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "div"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alias": {
+          "type": "array",
+          "items": {
+            "properties": {}
+          }
+        },
+        "telecom": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "system",
+              "value"
+            ],
+            "properties": {
+              "system": {
+                "type": "string",
+                "minLength": 1
+              },
+              "value": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "address": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "city",
+              "state",
+              "postalCode",
+              "country"
+            ],
+            "properties": {
+              "line": {
+                "type": "array",
+                "items": {
+                  "properties": {}
+                }
+              },
+              "city": {
+                "type": "string",
+                "minLength": 1
+              },
+              "state": {
+                "type": "string",
+                "minLength": 1
+              },
+              "postalCode": {
+                "type": "string",
+                "minLength": 1
+              },
+              "country": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "endpoint": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "reference"
+            ],
+            "properties": {
+              "reference": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "meta": {
+          "type": "object",
+          "properties": {
+            "tag": {
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "required": [
+                  "system",
+                  "code",
+                  "display"
+                ],
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "code": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "display": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "tag"
+          ]
+        }
+      },
+      "required": [
+        "resourceType",
+        "id",
+        "text",
+        "name",
+        "alias",
+        "telecom",
+        "address",
+        "endpoint",
+        "meta"
+      ]
+    },
+    "Condition": {
+      "description": "",
+      "type": "object",
+      "properties": {
+        "resourceType": {
+          "type": "string",
+          "minLength": 1
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "minLength": 1
+            },
+            "div": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "div"
+          ]
+        },
+        "clinicalStatus": {
+          "type": "object",
+          "properties": {
+            "coding": {
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "required": [
+                  "system",
+                  "code"
+                ],
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "code": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "coding"
+          ]
+        },
+        "verificationStatus": {
+          "type": "object",
+          "properties": {
+            "coding": {
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "required": [
+                  "system",
+                  "code"
+                ],
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "code": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "coding"
+          ]
+        },
+        "category": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "coding": {
+                "type": "array",
+                "uniqueItems": true,
+                "minItems": 1,
+                "items": {
+                  "required": [
+                    "system",
+                    "code",
+                    "display"
+                  ],
+                  "properties": {
+                    "system": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "code": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "display": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "severity": {
+          "type": "object",
+          "properties": {
+            "coding": {
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "required": [
+                  "system",
+                  "code",
+                  "display"
+                ],
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "code": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "display": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "coding"
+          ]
+        },
+        "code": {
+          "type": "object",
+          "properties": {
+            "coding": {
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "required": [
+                  "system",
+                  "code",
+                  "display"
+                ],
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "code": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "display": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "coding",
+            "text"
+          ]
+        },
+        "bodySite": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "text"
+            ],
+            "properties": {
+              "coding": {
+                "type": "array",
+                "uniqueItems": true,
+                "minItems": 1,
+                "items": {
+                  "required": [
+                    "system",
+                    "code",
+                    "display"
+                  ],
+                  "properties": {
+                    "system": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "code": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "display": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "subject": {
+          "type": "object",
+          "properties": {
+            "reference": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "reference"
+          ]
+        },
+        "onsetDateTime": {
+          "type": "string",
+          "minLength": 1
+        },
+        "meta": {
+          "type": "object",
+          "properties": {
+            "tag": {
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "required": [
+                  "system",
+                  "code",
+                  "display"
+                ],
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "code": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "display": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "tag"
+          ]
+        }
+      },
+      "required": [
+        "resourceType",
+        "id",
+        "text",
+        "clinicalStatus",
+        "verificationStatus",
+        "category",
+        "severity",
+        "code",
+        "bodySite",
+        "subject",
+        "onsetDateTime",
+        "meta"
+      ]
+    },
+    "Patient": {
+      "description": "",
+      "type": "object",
+      "properties": {
+        "resourceType": {
+          "type": "string",
+          "minLength": 1
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "minLength": 1
+            },
+            "div": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "div"
+          ]
+        },
+        "identifier": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "use",
+              "system",
+              "value"
+            ],
+            "properties": {
+              "use": {
+                "type": "string",
+                "minLength": 1
+              },
+              "type": {
+                "type": "object",
+                "properties": {
+                  "coding": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "minItems": 1,
+                    "items": {
+                      "required": [
+                        "system",
+                        "code"
+                      ],
+                      "properties": {
+                        "system": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "code": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "coding"
+                ]
+              },
+              "system": {
+                "type": "string",
+                "minLength": 1
+              },
+              "value": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "use",
+              "family"
+            ],
+            "properties": {
+              "use": {
+                "type": "string",
+                "minLength": 1
+              },
+              "family": {
+                "type": "string",
+                "minLength": 1
+              },
+              "given": {
+                "type": "array",
+                "items": {
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "gender": {
+          "type": "string",
+          "minLength": 1
+        },
+        "photo": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "contentType",
+              "data"
+            ],
+            "properties": {
+              "contentType": {
+                "type": "string",
+                "minLength": 1
+              },
+              "data": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "contact": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "relationship": {
+                "type": "array",
+                "uniqueItems": true,
+                "minItems": 1,
+                "items": {
+                  "properties": {
+                    "coding": {
+                      "type": "array",
+                      "uniqueItems": true,
+                      "minItems": 1,
+                      "items": {
+                        "required": [
+                          "system",
+                          "code"
+                        ],
+                        "properties": {
+                          "system": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "code": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "organization": {
+                "type": "object",
+                "properties": {
+                  "reference": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "display": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "reference",
+                  "display"
+                ]
+              }
+            }
+          }
+        },
+        "managingOrganization": {
+          "type": "object",
+          "properties": {
+            "reference": {
+              "type": "string",
+              "minLength": 1
+            },
+            "display": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "reference",
+            "display"
+          ]
+        },
+        "link": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "other": {
+                "type": "object",
+                "properties": {
+                  "reference": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "reference"
+                ]
+              },
+              "type": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "meta": {
+          "type": "object",
+          "properties": {
+            "tag": {
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "required": [
+                  "system",
+                  "code",
+                  "display"
+                ],
+                "properties": {
+                  "system": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "code": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "display": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "tag"
+          ]
+        }
+      },
+      "required": [
+        "resourceType",
+        "id",
+        "text",
+        "identifier",
+        "active",
+        "name",
+        "gender",
+        "photo",
+        "contact",
+        "managingOrganization",
+        "link",
+        "meta"
+      ]
+    }
+  },
+  "paths": {
+    "/Account": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Account"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Account/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "required": true,
+          "name": "id",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Account"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Account"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Account"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Account"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Account/{id}/_history": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "_count",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "_since",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Account/_history": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "parameters": [
+          {
+            "name": "_count",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "_since",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Account/{id}/_history/{vid}": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "vid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Account"
+            }
+          }
+        }
+      }
+    },
+    "/AllergyIntolerance": {
+      "post": {
+        "tags": [
+          "AllergyIntolerance"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/AllergyIntolerance"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "AllergyIntolerance"
+        ],
+        "parameters": [
+          {
+            "name": "asserter",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "clinical-status",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "code",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "criticality",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "date",
+            "type": "string",
+            "in": "query",
+            "format": "date"
+          },
+          {
+            "name": "identifier",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "last-date",
+            "type": "string",
+            "in": "query",
+            "format": "date"
+          },
+          {
+            "name": "manifestation",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "onset",
+            "type": "string",
+            "in": "query",
+            "format": "date"
+          },
+          {
+            "name": "patient",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "recorder",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "route",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "severity",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "verification-status",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "_content",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "_id",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "_lastUpdated",
+            "type": "string",
+            "in": "query",
+            "format": "date"
+          },
+          {
+            "name": "_profile",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "_query",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "_security",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "_source",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "_tag",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "_text",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "_format",
+            "in": "query",
+            "type": "string",
+            "x-consoleDefault": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AllergyIntolerance"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AllergyIntolerance/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "required": true,
+          "name": "id",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "AllergyIntolerance"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/AllergyIntolerance"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "AllergyIntolerance"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/AllergyIntolerance"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AllergyIntolerance"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/AllergyIntolerance/{id}/_history": {
+      "get": {
+        "tags": [
+          "AllergyIntolerance"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "_count",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "_since",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/AllergyIntolerance/_history": {
+      "get": {
+        "tags": [
+          "AllergyIntolerance"
+        ],
+        "parameters": [
+          {
+            "name": "_count",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "_since",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/AllergyIntolerance/{id}/_history/{vid}": {
+      "get": {
+        "tags": [
+          "AllergyIntolerance"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "vid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/AllergyIntolerance"
+            }
+          }
+        }
+      }
+    },
+    "/Claim": {
+      "post": {
+        "tags": [
+          "Claim"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Claim"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Claim/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "required": true,
+          "name": "id",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Claim"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Claim"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Claim"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Claim"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Claim"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Claim/{id}/_history": {
+      "get": {
+        "tags": [
+          "Claim"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "_count",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "_since",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Claim/_history": {
+      "get": {
+        "tags": [
+          "Claim"
+        ],
+        "parameters": [
+          {
+            "name": "_count",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "_since",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Claim/{id}/_history/{vid}": {
+      "get": {
+        "tags": [
+          "Claim"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "vid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Claim"
+            }
+          }
+        }
+      }
+    },
+    "/Organization": {
+      "post": {
+        "tags": [
+          "Organization"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Organization"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Organization/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "required": true,
+          "name": "id",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Organization"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Organization"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Organization"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Organization"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Organization/{id}/_history": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "_count",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "_since",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Organization/_history": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "parameters": [
+          {
+            "name": "_count",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "_since",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Organization/{id}/_history/{vid}": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "vid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Organization"
+            }
+          }
+        }
+      }
+    },
+    "/Condition": {
+      "post": {
+        "tags": [
+          "Condition"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Condition"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Condition/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "required": true,
+          "name": "id",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Condition"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Condition"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Condition"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Condition"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Condition"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Condition/{id}/_history": {
+      "get": {
+        "tags": [
+          "Condition"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "_count",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "_since",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Condition/_history": {
+      "get": {
+        "tags": [
+          "Condition"
+        ],
+        "parameters": [
+          {
+            "name": "_count",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "_since",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Condition/{id}/_history/{vid}": {
+      "get": {
+        "tags": [
+          "Condition"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "vid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Condition"
+            }
+          }
+        }
+      }
+    },
+    "/Patient": {
+      "post": {
+        "tags": [
+          "Patient"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Patient"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Patient"
+        ],
+        "parameters": [
+          {
+            "name": "active",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "address",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "address-city",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "address-country",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "address-postalcode",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "address-state",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "address-use",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "birthdate",
+            "type": "string",
+            "in": "query",
+            "format": "date"
+          },
+          {
+            "name": "death-date",
+            "type": "string",
+            "in": "query",
+            "format": "date"
+          },
+          {
+            "name": "deceased",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "email",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "family",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "gender",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "general-practitioner",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "given",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "identifier",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "language",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "link",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "organization",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "phone",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "phonetic",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "telecom",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "_content",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "_id",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "_lastUpdated",
+            "type": "string",
+            "in": "query",
+            "format": "date"
+          },
+          {
+            "name": "_profile",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "_query",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "_security",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "_source",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "_tag",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "_text",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "_format",
+            "in": "query",
+            "type": "string",
+            "x-consoleDefault": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Patient"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Patient/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "required": true,
+          "name": "id",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Patient"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Patient"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Patient"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Patient"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Patient"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Patient/{id}/_history": {
+      "get": {
+        "tags": [
+          "Patient"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "_count",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "_since",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Patient/_history": {
+      "get": {
+        "tags": [
+          "Patient"
+        ],
+        "parameters": [
+          {
+            "name": "_count",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "_since",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Patient/{id}/_history/{vid}": {
+      "get": {
+        "tags": [
+          "Patient"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "vid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Patient"
+            }
+          }
+        }
+      }
+    }
+  },
+  "info": {
+    "description": "Fast Healthcare Interoperability Resources (FHIR, pronounced \"Fire\") defines a set of \"Resources\" that represent granular clinical concepts. The resources can be managed in isolation, or aggregated into complex documents. Technically, FHIR is designed for the web; the resources are based on simple XML or JSON structures, with an http-based RESTful protocol where each resource has predictable URL. Where possible, open internet standards are used for data representation. \n",
+    "title": "Untitled",
+    "version": "unspecified"
+  },
+  "host": "localhost:3000",
+  "schemes": [
+    "http"
+  ],
+  "basePath": "/4_0_0",
+  "tags": [
+    {
+      "name": "Account"
+    },
+    {
+      "name": "AllergyIntolerance"
+    },
+    {
+      "name": "Claim"
+    },
+    {
+      "name": "Organization"
+    },
+    {
+      "name": "Condition"
+    },
+    {
+      "name": "Patient"
+    }
+  ]
+}

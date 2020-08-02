@@ -1,0 +1,13 @@
+export * from './account.service';
+import { AccountService } from './account.service';
+export * from './allergyIntolerance.service';
+import { AllergyIntoleranceService } from './allergyIntolerance.service';
+export * from './claim.service';
+import { ClaimService } from './claim.service';
+export * from './condition.service';
+import { ConditionService } from './condition.service';
+export * from './organization.service';
+import { OrganizationService } from './organization.service';
+export * from './patient.service';
+import { PatientService } from './patient.service';
+export const APIS = [AccountService, AllergyIntoleranceService, ClaimService, ConditionService, OrganizationService, PatientService];
