@@ -1,6 +1,9 @@
 # Description
 [Fast Healthcare Interoperability Resources (FHIR)](https://www.hl7.org/fhir/index.html) Angular Client PoC
 
+## Start Docker MongoDB container
+docker run --name mongo -d mongo
+
 ## Start FHIR Server from Asymmetrik github repository
 ```shell
 git clone https://github.com/Asymmetrik/node-fhir-server-mongo.git
