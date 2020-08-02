@@ -40,3 +40,9 @@ The code generate from swagger codegen import bad import 'rxjs'. Set in all serv
 ```shell
 import { Observable } from 'rxjs';
 ```
+
+## FHIR_Diagram
+![FHIR_Diagram](https://user-images.githubusercontent.com/1216181/89124707-55298e80-d4d9-11ea-9d59-83107cfa3185.png)
+
+## FHIR_UI
+![FHIR_View](https://user-images.githubusercontent.com/1216181/89124724-78543e00-d4d9-11ea-8535-6ae571ecaf1e.png)
