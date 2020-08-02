@@ -1,5 +1,5 @@
 # Description
-FHIR Angular Client PoC
+Fast Healthcare Interoperability Resources (FHIR) Angular Client PoC
 
 ## Start FHIR Server from Asymmetrik github repository
 ```shell
