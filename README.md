@@ -40,6 +40,10 @@ The code generate from swagger codegen import bad import 'rxjs'. Set in all serv
 ```shell
 import { Observable } from 'rxjs';
 ```
+## Add a patient using Postman
+![FHIR_Postman_01](https://user-images.githubusercontent.com/1216181/89124911-d9304600-d4da-11ea-97e7-59a23a4ab1fd.png)
+![FHIR_Postman_02](https://user-images.githubusercontent.com/1216181/89124918-e2211780-d4da-11ea-9841-bf96409b953f.png)
+
 
 ## FHIR_Diagram
 ![FHIR_Diagram](https://user-images.githubusercontent.com/1216181/89124707-55298e80-d4d9-11ea-9d59-83107cfa3185.png)
