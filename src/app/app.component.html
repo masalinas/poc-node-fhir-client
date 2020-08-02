@@ -1,3 +1,5 @@
+<h1>FHIR Patient Resource PoC</h1>
+
 <div [ngStyle]="{'height.px': pageHeight}">
   <kendo-grid [style.height]="'100%'"
               [columnMenu]="true"
@@ -37,7 +39,7 @@
       <!-- Grid Columns -->
       <kendo-grid-column field="id" title="Id" width="50" hidden="true">
       </kendo-grid-column>
-      <kendo-grid-column field="name.0.family" width="45" title="Name">
+      <kendo-grid-column field="name.0.family" title="Name" width="45" >
       </kendo-grid-column>
       <kendo-grid-column field="address[0].text" title="Address" width="150">
       </kendo-grid-column>
@@ -51,7 +53,7 @@
               <span *ngIf="!dataItem.active" class="k-icon k-i-close"></span>
           </ng-template>
       </kendo-grid-column>
-      <kendo-grid-column field="active" title="aAtive" width="30" filter="boolean">
+      <kendo-grid-column field="active" title="Active" width="30" filter="boolean">
           <ng-template kendoGridCellTemplate let-dataItem>
               <span *ngIf="dataItem.active" class="k-icon k-i-check"></span>
               <span *ngIf="!dataItem.active" class="k-icon k-i-close"></span>
